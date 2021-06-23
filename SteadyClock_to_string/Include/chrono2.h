@@ -12,6 +12,7 @@ namespace std
 		static auto steadyStart = std::chrono::steady_clock::now();
 		static auto systemStart = std::chrono::system_clock::now();
 
+		/*Steady clock to system clock*/
 		auto steadyToSystem(std::chrono::steady_clock::time_point steady)
 		{
 			return systemStart + std::chrono::duration_cast<std::chrono::system_clock::duration>(steady - steadyStart);
@@ -20,22 +21,21 @@ namespace std
 		inline std::string time_toString(std::chrono::system_clock::time_point time)
 		{
 			using namespace std::chrono;
-			// get number of milliseconds for the current second
+			// get number of microseconds for the current second
 			// (remainder after division into seconds)
 			auto us = duration_cast<microseconds>(time.time_since_epoch()) % 1000000;
 
 			// convert to std::time_t in order to convert to std::tm (broken time)
 			auto timer = std::chrono::system_clock::to_time_t(time);
 
-			// convert to broken time
-			std::tm bt;
+			std::tm t;
 
-			localtime_s(&bt, &timer);
+			localtime_s(&t, &timer);
 
 			std::ostringstream oss;
 
-			oss << std::put_time(&bt, "%Y_%m_%d,%H_%M_%S"); // HH:MM:SS
-			oss << ',' << std::setfill('0') << std::setw(6) << us.count() << " ";
+			oss << std::put_time(&t, "%Y:%m:%d_%H:%M:%S:");
+			oss << ',' << std::setfill('0') << std::setw(6) << us.count();
 
 			return oss.str();
 		}
