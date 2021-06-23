@@ -13,12 +13,12 @@ namespace std
 		static auto systemStart = std::chrono::system_clock::now();
 
 		/*Steady clock to system clock*/
-		auto steadyToSystem(std::chrono::steady_clock::time_point steady)
+		static auto steadyToSystem(std::chrono::steady_clock::time_point steady)
 		{
 			return systemStart + std::chrono::duration_cast<std::chrono::system_clock::duration>(steady - steadyStart);
 		}
 
-		inline std::string time_toString(std::chrono::system_clock::time_point time)
+		static inline std::string time_toString(std::chrono::system_clock::time_point time)
 		{
 			using namespace std::chrono;
 			// get number of microseconds for the current second
@@ -34,7 +34,7 @@ namespace std
 
 			std::ostringstream oss;
 
-			oss << std::put_time(&t, "%Y/%m/%d_%H:%M:%S:");
+			oss << std::put_time(&t, "%Y_%m_%d,%H_%M_%S,");
 			oss << std::setfill('0') << std::setw(6) << us.count();
 
 			return oss.str();
