@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\SteadyClock_to_string.cpp" />
+    <ClCompile Include="SteadyClock_to_string.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\chrono2.h" />
+    <ClInclude Include="..\Include\chrono2.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

@@ -34,8 +34,8 @@ namespace std
 
 			std::ostringstream oss;
 
-			oss << std::put_time(&t, "%Y:%m:%d_%H:%M:%S:");
-			oss << ',' << std::setfill('0') << std::setw(6) << us.count();
+			oss << std::put_time(&t, "%Y/%m/%d_%H:%M:%S:");
+			oss << std::setfill('0') << std::setw(6) << us.count();
 
 			return oss.str();
 		}

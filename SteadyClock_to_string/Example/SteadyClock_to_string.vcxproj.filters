@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\SteadyClock_to_string.cpp">
+    <ClCompile Include="SteadyClock_to_string.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\chrono2.h">
+    <ClInclude Include="..\Include\chrono2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
