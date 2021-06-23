@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Include\chrono2.h">
+    <ClInclude Include="chrono2\chrono2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <thread>
-#include "../Include/chrono2.h"
+#include "chrono2/chrono2.h"
 
 int main()
 {

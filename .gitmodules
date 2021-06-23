@@ -1,0 +1,3 @@
+[submodule "SteadyClock_to_string/chrono2"]
+	path = SteadyClock_to_string/chrono2
+	url = https://github.com/Coolava/chrono2
